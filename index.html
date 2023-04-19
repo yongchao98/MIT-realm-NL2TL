@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Learning Safe, Generalizable Perception-based Hybrid Control with Certificates.">
+  <meta name="keywords" content="perception-based control, safe control, control barrier functions, certificate learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LOCUS: Learning Safe, Generalizable Perception-based Hybrid Control with Certificates</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://realm.mit.edu">
+            REALM Website
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">LOCUS: Learning Safe, Generalizable Perception-based Hybrid Control with Certificates</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://dawson.mit.edu">Charles Dawson</a>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/bethanylowenkamp/">Bethany Lowenkamp</a>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/dylan-goff-170435227/">Dylan Goff</a>,
+            </span>
+            <span class="author-block">
+              <a href="http://chuchu.mit.edu">Chuchu Fan</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Massachusetts Institute of Technology</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2201.00932.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2201.00932"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/dNOLAzTpIxI"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Supplementary Video</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://youtu.be/RjNoaMrF7F0"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Presentation Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/MIT-REALM/neural_clbf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/headline.png"
+        class="center-image"
+        alt="Our system receives lidar sensor measurements and uses a hybrid control architecture to navigate towards the goal"/>
+      <h2 class="subtitle has-text-centered">
+        <br/>
+        Learning to <b>recognize unsafe behaviors</b> from <b>observations</b> lets us <b>guarantee safety</b> for robots.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/RjNoaMrF7F0?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Many robotic tasks require high-dimensional sensors such as cameras and Lidar to navigate complex environments, but developing certifiably safe feedback controllers around these sensors remains a challenging open problem, particularly when learning is involved. 
+          </p>
+          <p>
+            Previous works have proved the safety of perception-feedback controllers by separating the perception and control subsystems and making strong assumptions on the abilities of the perception subsystem. In this work, we introduce a novel learning-enabled perception-feedback hybrid controller, where we use Control Barrier Functions (CBFs) and Control Lyapunov Functions (CLFs) to show the safety and liveness of a full-stack perception-feedback controller. We use neural networks to learn a CBF and CLF for the full-stack system directly in the observation space of the robot, without the need to assume a separate perception-based state estimator. Our hybrid controller, called LOCUS (Learning-enabled Observation-feedback Control Using Switching), can safely navigate unknown environments, consistently reach its goal, and generalizes safely to environments outside of the training dataset. We demonstrate LOCUS in experiments both in simulation and in hardware, where it successfully navigates a changing environment using feedback from a Lidar sensor. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Train in one environment... -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Train in one environment...</h2>
+          <img src="./static/images/training_env.png"
+            class="center-image simulation-image"
+            alt="The CLF and CBF are trained in a single environment"/>
+        </div>
+      </div>
+      <!--/ Train in one environment... -->
+
+      <!-- Generalization. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">generalize safely...</h2>
+            <img src="./static/images/random_envs.png"
+              class="center-image simulation-image"
+              alt="The CLF and CBF are trained in a single environment"/>
+        </div>
+      </div>
+    </div>
+    <!--/ Generalization. -->
+
+    <!-- HW. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">and transfer to hardware without retraining!</h2>
+
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/dNOLAzTpIxI?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+
+      </div>
+    </div>
+    <!--/ HW. -->
+
+
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            This work is part of a broader research thread around <emph>learned certificates</emph>, which allow us to build data-driven proofs of controller correctness. For a survey of the field of learned certificates, see <a rel="survey" href="https://arxiv.org/pdf/2202.11762.pdf">this paper</a>.
+          </p>
+          <p>
+            Other work on learned certificates from our lab include:
+            <ul>
+              <li><a href="https://proceedings.mlr.press/v164/dawson22a/dawson22a.pdf">Training robust controllers using neural Lyapunov-barrier certificates</a>.</li>
+              <li><a href="http://arxiv.org/abs/2101.05436">Learning decentralized multi-agent controllers with barrier certificates</a>.</li>
+              <li><a href="https://arxiv.org/abs/2109.06689v1">Using barrier certificates to learn a better simulator for pedestrian behaviors</a>.</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{dawson2022locus,
+author={Dawson, Charles and Lowenkamp, Bethany and Goff, Dylan and Fan, Chuchu},
+journal={IEEE Robotics and Automation Letters},
+title={Learning Safe, Generalizable Perception-Based Hybrid Control With Certificates},
+year={2022},
+volume={7},
+number={2},
+pages={1904-1911},
+doi={10.1109/LRA.2022.3141657}}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
+            We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template.
+          </p>
+        </div>
+      </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
