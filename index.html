@@ -151,10 +151,10 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Many robotic tasks require high-dimensional sensors such as cameras and Lidar to navigate complex environments, but developing certifiably safe feedback controllers around these sensors remains a challenging open problem, particularly when learning is involved. 
+           Temporal Logic (TL) can be used to rigorously specify complex high-level specification for systems in many engineering applications. The translation between natural language (NL) and TL has been under-explored due to the lack of dataset and generalizable model across different application domains.
           </p>
           <p>
-            Previous works have proved the safety of perception-feedback controllers by separating the perception and control subsystems and making strong assumptions on the abilities of the perception subsystem. In this work, we introduce a novel learning-enabled perception-feedback hybrid controller, where we use Control Barrier Functions (CBFs) and Control Lyapunov Functions (CLFs) to show the safety and liveness of a full-stack perception-feedback controller. We use neural networks to learn a CBF and CLF for the full-stack system directly in the observation space of the robot, without the need to assume a separate perception-based state estimator. Our hybrid controller, called LOCUS (Learning-enabled Observation-feedback Control Using Switching), can safely navigate unknown environments, consistently reach its goal, and generalizes safely to environments outside of the training dataset. We demonstrate LOCUS in experiments both in simulation and in hardware, where it successfully navigates a changing environment using feedback from a Lidar sensor. 
+           We propose an accurate and generalizable transformation framework of English instructions from NL to TL, exploring the use of Large Language Models (LLMs) at multiple stages. Our contributions are twofold. First, we develop a framework to create a dataset of NL-TL pairs combining LLMs and human annotation. We publish a dataset with 28K NL-TL pairs. Then, we finetune T5 models on the lifted versions (i.e., the specific Atomic Propositions (AP) are hidden) of the NL and TL. The enhanced generalizability originates from two aspects: 1) Usage of lifted NL-TL characterizes common logical structures, without constraints of specific domains. 2) Application of LLMs in dataset creation largely enhances corpus richness.
           </p>
         </div>
       </div>
